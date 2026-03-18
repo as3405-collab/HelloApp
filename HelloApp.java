@@ -1,15 +1,20 @@
+import java.util.Scanner;
+
 public class HelloApp {
 
     public static void main(String[] args) {
 
-        String name;
+        Scanner input = new Scanner(System.in);
 
-        if (args.length > 0) {
-            name = args[0];
-        } else {
+        System.out.print("Enter your name: ");
+        String name = input.nextLine();
+
+        if (name.isEmpty()) {
             name = "World";
         }
 
         System.out.println("Hello, " + name + "!");
+
+        input.close();
     }
 }
