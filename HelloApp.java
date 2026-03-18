@@ -12,17 +12,15 @@ public class HelloApp {
 
             StringBuilder nameBuilder = new StringBuilder();
 
-            boolean first = true;
-
             for (String arg : args) {
-                if (!first) {
-                    nameBuilder.append(", ");
-                }
-                nameBuilder.append(arg);
-                first = false;
+                nameBuilder.append(arg).append(", ");
             }
 
-            name = nameBuilder.toString();
+            if (nameBuilder.length() > 0) {
+                name = nameBuilder.substring(0, nameBuilder.length() - 2); 
+            } else {
+                name = "World";
+            }
         }
 
         System.out.println("Hello, " + name + "!");
